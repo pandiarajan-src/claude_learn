@@ -33,3 +33,21 @@ def chat_with_claude(user_input):
     conversation.append({"role": "assistant", "content": assistant_response})
 
     return assistant_response, final_message.usage
+
+
+# Multi-turn conversation
+print("***Turn 1:***")
+claude_response, usage = chat_with_claude("My favorite color is blue")  # Claude learns this fact!
+print(claude_response)
+print(f"\nInput tokens: {usage.input_tokens}\nOutput tokens: {usage.output_tokens}")
+
+print("\n\n***Turn 2:***")
+claude_response, usage = chat_with_claude("What's my favorite color?")  # Claude remembers!
+print(claude_response)
+print(f"\nInput tokens: {usage.input_tokens} \nOutput tokens: {usage.output_tokens}")
+
+print("\n\n***Turn 3:***")
+claude_response, usage = chat_with_claude("What did we just discuss?")  # Full context!
+print(claude_response)
+print(f"\nInput tokens: {usage.input_tokens}\nOutput tokens: {usage.output_tokens}")
+    
