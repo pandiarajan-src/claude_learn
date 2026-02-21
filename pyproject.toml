@@ -1,0 +1,12 @@
+[project]
+name = "claude-learn"
+version = "0.1.0"
+description = "Learning repository for Claude API and MCP"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.79.0",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.26.0",
+    "python-dotenv>=1.2.1",
+    "watchdog>=6.0.0",
+]
